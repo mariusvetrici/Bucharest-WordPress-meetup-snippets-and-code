@@ -1,0 +1,12 @@
+<?php
+function is_user_logged_in() {
+$loggedin = false;
+foreach ( (array) $_COOKIE as $cookie => $value ) {
+        if ( stristr($cookie, 'wordpress_logged_in_') )
+            $loggedin = true;
+    }
+    return $loggedin;
+}
+if ( ! stristr($_SERVER['REQUEST_URI'], '/wp-admin') && ! stristr($_SERVER['REQUEST_URI'], '/wp-login.php') && ! is_user_logged_in() )
+    $upgrading = time();
+?>
