@@ -1,0 +1,1694 @@
+/*
+Theme Name: meetup_wp
+Theme URI: http://bucurion.ro/
+Author: Bucur
+Author URI: http://bucurion.ro
+Description: Wordpress basic theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: meetup_wp
+Tags:  two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+meetup_wp is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+::-webkit-scrollbar {
+width: 10px;
+}
+::-webkit-scrollbar-thumb {
+background-color: #222;
+border: 1px solid #FFF;
+-webkit-border-radius: 7px 7px 7px 7px;
+border-radius: 7px 7px 7px 7px;
+}
+::-webkit-scrollbar-track {
+background-color: #e5e5e5;
+border-left: 1px solid #aaa;
+}
+
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+	text-decoration: none;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	font-family: 'Open sans', sans-serif;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-family: 'Open sans', sans-serif;
+}
+
+td,
+th {
+	padding: 0;
+	font-family: 'Open sans', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Open sans', sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+p {
+	margin-bottom: 1.5em;
+	font-family: 'Open sans', sans-serif;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #555;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+	font-family: 'Open sans', sans-serif;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Open sans', sans-serif;
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 0;
+	font-family: 'Open sans', sans-serif;
+}
+
+ul {
+	list-style: disc;
+	font-family: 'Open sans', sans-serif;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 5px;
+}
+
+ol {
+	list-style: decimal;
+	font-family: 'Open sans', sans-serif;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin: 1.5em 0 0 1.5em;
+	font-family: 'Open sans', sans-serif;
+}
+
+dt {
+	font-weight: bold;
+	font-family: 'Open sans', sans-serif;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+	font-family: 'Open sans', sans-serif;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+	font-family: 'Open sans', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, .8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #555;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: #0099ff;
+	text-decoration: none;
+	font-size:14px;
+	font-family: 'Open sans', sans-serif;
+}
+
+a:visited {
+	color: #0099ff;
+	text-decoration: none;
+	font-size:14px;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #0099aa;
+	text-decoration: none;
+}
+
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 10px 1.5em;
+	clear: both;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 15px 0 1.5em;
+	clear: both;
+	overflow: hidden;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+.clear {
+	clear: both;
+}
+
+/*=GENERAL CSS=*/
+
+header#masthead.site-header {
+	width: 100%;
+	overflow: hidden;
+	clear: both;
+	min-height: 120px;
+	float: none;
+	background: #fff;
+	margin: 0 auto;
+	padding: 0;
+}
+.site-branding {
+	height: 140px;
+	padding: 33px 0;
+	overflow: hidden;
+	margin: 0 auto;
+	float: left;
+	max-width: 500px;
+	clear: both;
+}
+.site-title {
+	font-size: 36px;
+	font-family: 'Open Sans', sans-serif;
+	color: #222;
+}
+.site-title a{
+	color: #222;
+	text-decoration: none;
+}
+.site-title a:hover{
+	color: #0099ff;
+	text-decoration: none;
+}
+.header_html {
+	padding: 0;
+	margin: 28px auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: 992px) and (max-width: 2400px) { 
+		.menu-toggle {
+			display: none;
+		}
+		
+		#primary-menu {
+			max-width: 1170px;
+			margin: 0 auto;
+			display: block;
+			height: 50px;
+		}
+
+		.main-navigation {
+			margin: 0;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			clear: both;
+			display: block;
+			float: left;
+			width: 100%;
+			background: #f0f9ff; /* Old browsers */
+			background: -moz-linear-gradient(top, #f0f9ff 0%, #e5e5e5 100%); 
+			background: -webkit-linear-gradient(top, #f0f9ff 0%,#e5e5e5 100%); 
+			background: linear-gradient(to bottom, #f0f9ff 0%,#e5e5e5 100%); 
+			
+		}
+
+		.main-navigation ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+		}
+
+		.main-navigation li {
+			float: left;
+			position: relative;
+		}
+
+		.main-navigation a {
+			display: block;
+			text-decoration: none;
+			color: #222;
+			font-size: 14px;
+			font-family: 'Open Sans', sans-serif;
+			padding: 15px 15px;
+			text-transform: uppercase;
+		}
+		.main-navigation ul li a:hover{ 
+         background: #e5e5e5;
+         color: #222;
+		}
+
+
+		.main-navigation ul ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			background: #fff;
+			position: absolute;
+			top: 3em;
+			left: -999em;
+			z-index: 99999;
+		}
+
+		.main-navigation ul ul ul {
+			left: -999em;
+			top: 0;
+		}
+
+		.main-navigation ul ul a {
+			width: 240px;
+			font-size: 13px;
+			font-family: 'Open Sans', sans-serif;
+			text-transform: capitalize;
+		}
+
+		.main-navigation ul ul li {
+
+		}
+
+		.main-navigation li:hover > a,
+		.main-navigation li.focus > a {
+		}
+
+		.main-navigation ul ul :hover > a,
+		.main-navigation ul ul .focus > a {
+		}
+
+		.main-navigation ul ul a:hover,
+		.main-navigation ul ul a.focus {
+		}
+
+		.main-navigation ul li:hover > ul,
+		.main-navigation ul li.focus > ul {
+			left: auto;
+		}
+
+		.main-navigation ul ul li:hover > ul,
+		.main-navigation ul ul li.focus > ul {
+			left: 100%;
+		}
+
+		.main-navigation .current_page_item > a,
+		.main-navigation .current-menu-item > a,
+		.main-navigation .current_page_ancestor > a,
+		.main-navigation .current-menu-ancestor > a {
+		}
+
+		
+}
+
+
+@media only screen and (min-width: 68px) and (max-width: 992px) {
+
+		/* Small menu. */
+		.menu-toggle,
+		.main-navigation.toggled ul {
+			display: block;
+		}
+
+		.menu-toggle {
+			display: block;
+		}
+		.main-navigation ul {
+			display: block;
+		}
+
+		#primary-menu {
+			max-width: 1170px;
+			margin: 0 auto;
+		 }
+
+		.main-navigation {
+			margin: 10px 0;
+			clear: both;
+			display: block;
+			float: left;
+			width: 100%;
+			background: transparent;
+		}
+
+		.main-navigation ul {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+		}
+
+		.main-navigation li {
+			float: left;
+			width: 100%;
+			position: relative;
+		}
+
+		.main-navigation a {
+			display: block;
+			text-decoration: none;
+			color: #222;
+			font-size: 14px;
+			font-family: 'Open Sans', sans-serif;
+			padding: 15px 15px;
+			text-transform: uppercase;
+		}
+
+		.main-navigation ul ul {
+			float: left;
+			position: relative;
+			display: block;
+			z-index: 99999;
+		}
+
+		.main-navigation ul ul ul {
+			float: left;
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+
+		.main-navigation ul ul a {
+			width: 100%;
+			display: block;
+		}
+
+		.main-navigation ul ul li {
+           float: left;
+           display: block;
+		}
+
+		.main-navigation li:hover > a,
+		.main-navigation li.focus > a {
+		}
+
+		.main-navigation ul ul :hover > a,
+		.main-navigation ul ul .focus > a {
+		}
+
+		.main-navigation ul ul a:hover,
+		.main-navigation ul ul a.focus {
+		}
+
+		.main-navigation ul li:hover > ul,
+		.main-navigation ul li.focus > ul {
+			left: auto;
+		}
+
+		.main-navigation ul ul li:hover > ul,
+		.main-navigation ul ul li.focus > ul {
+			float: left;
+			display: block;
+			/*left: 100%;*/
+		}
+
+		/* Small menu. */
+		.menu-toggle,
+		.main-navigation.toggled ul {
+			display: block;
+			margin: 0 auto;
+			padding: 10px 15px;
+		}
+
+}
+
+/*= HOME CSS =*/
+
+@font-face {
+	font-family: "Lobster";  
+	src: url(/wp-content/themes/meetup_wp/fonts/Lobster.otf);  
+	font-weight: normal;  
+}
+.home {
+	clear: both;
+	padding: 0;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+h2.welcome {
+	line-height: 60px;
+	margin: 40px 0 40px;
+	padding: 0;
+	text-align: center;
+    font-family: "Lobster";
+    color: #222;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 1px 1px 2px #999;
+} 
+.box_info {
+	position: relative;
+    border-top: 4px solid #16a085;
+    text-align: center;
+    position: relative;
+    background: #f2f2f2;
+    max-width: 350px;
+    width: 100%;
+    height: 235px;
+    margin: 0 0 70px;
+    box-shadow: 0 10px 10px -8px #777;
+}
+.box_info h3 {
+    text-align: center;
+    font-size: 20px;
+    color: #111;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 30px 0 0;
+    font-family: 'Open sans',sans-serif;
+}
+button.box {
+    background: #16a085;
+    padding: 5px;
+    margin: 15px 0;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #2c3e50;
+    width: 170px;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+.center-block {
+	margin: 0 auto;
+	text-align: center;
+	float: none;
+}
+.paralax {
+	position: relative;
+	display: block;
+	height: auto;
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+h2.paralax {
+	line-height: 60px;
+	margin: 40px 0 40px;
+	padding: 0;
+	text-align: center;
+    font-family: "Lobster";
+    color: #222;
+    font-size: 50px;
+    font-style: italic;
+} 
+
+/*= CONTENT CSS =*/
+
+#content.site-content{
+	overflow: hidden;
+	clear: both;
+}
+main#main.site-main {
+	overflow: hidden;
+	clear: both;
+}
+header.entry-header {
+	clear: both;
+	height: auto;
+}
+h1.entry-title {
+   font-family: 'Open Sans', sans-serif;
+   color: #222;
+   font-size:30px;
+   margin: 5px 0;
+   line-height: 45px;
+   font-weight: 300;
+}
+h2.entry-title {
+   font-family: 'Open Sans', sans-serif;
+   color: #222;
+   font-size:25px;
+   margin: 5px 0;
+   line-height: 45px;
+   font-weight: 300;
+}
+h2.entry-title a {
+    text-decoration:none;
+    color:#111;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+h2.entry-title a:hover {
+    text-decoration:none;
+    color:#0099ff;
+}
+div.entry-meta {
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-size: 13px;
+    margin: 3px 0 10px 0;
+    padding: 0 0 0;
+    line-height: 22px;
+}
+time.entry-date.published.updated {
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-size: 12px;
+    margin: 3px 0 10px 0;
+    padding: 0 0 0;
+    line-height: 22px;
+    text-decoration: none;
+}
+.page-content, .entry-content, .entry-summary {
+    margin: 5px 0 0;
+}
+.entry-content p {
+    font-family: 'Open Sans', sans-serif;
+    color:#222;
+    font-size: 14px;
+    margin: 0 0 10px;
+    padding: 0 0 0;
+    line-height: 22px;
+    text-decoration: none;
+}
+.entry-content ul li {
+    font-family: 'Open Sans', sans-serif;
+    color:#222;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+    text-decoration: none;
+}
+.entry-content ul,
+.entry-content ol {
+    margin: 0 15px 15px 20px; 
+    padding-left: 20px;
+}
+.entry-content  ul li,
+.entry-content  ol li {
+    font-family: 'Open Sans', Sans-serif;
+    margin-left: 10px;
+}
+.entry-content  ul li {
+    list-style: circle;
+}
+.entry-content  ol li {
+    list-style: decimal;
+}
+.entry-content video,
+.entry-content object {
+    max-width: 100%; 
+    height: auto;
+}
+.entry-content .attachment {
+    margin: 20px 0;
+}
+img.attachment{
+    margin: 20px 0;
+}
+footer.entry-footer {
+	font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-size: 13px;
+    margin: 3px 0 10px 0;
+    padding: 0 0 0;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+/*= Sidebar css widget area =*/
+
+aside#secondary {
+   z-index: 2;
+   position: relative;
+   padding: 15px 7px;
+   display: block;
+   margin: 20px 0;
+}
+h3.widget-title {
+   font-family: 'Open Sans', sans-serif;
+   color:#323232;
+   font-size: 20px;
+   text-transform: uppercase;
+   padding: 0 10px;
+}
+
+.widget-area ul {
+   margin: 10px 0 0 15px;
+   padding: 0;
+}
+
+.widget-area ul li {
+   margin: 0;
+   padding: 0;
+}
+
+.widget-area ul li a{
+   margin: 0;
+   padding: 0;
+   color: #0099ff;
+}
+.search-submit {
+	display: none;
+}
+span.comments-link,
+span.tags-links {
+	margin: 0 7px;
+}
+.textwidget {
+	clear: both;
+}
+
+.nav-previous {
+  padding: 5px;
+  border:1px solid #ccc;
+}
+.nav-previous a{
+	color: #999;
+	font-size: 13px;
+}
+
+.nav-next {
+  padding: 5px;
+  border:1px solid #ccc;
+}
+.nav-next a{
+	color: #999;
+	font-size: 13px;
+}
+
+/*= Author Box =*/
+
+.author_bio_section{
+background: none repeat scroll 0 0 #F5F5F5;
+padding: 15px;
+border: 1px solid #ccc;
+margin: 0 0 15px;
+}
+
+.author_name{
+font-size:16px;
+font-weight: bold;
+}
+
+.author_details img {
+border: 1px solid #D8D8D8;
+border-radius: 50%;
+float: left;
+margin: 0 10px 10px 0;
+}
+
+/*= Search Box =*/
+
+.search-block {
+	float: right;
+    overflow: hidden;
+    margin-top: 29.5px;
+}
+
+#searchform{
+    overflow: hidden;
+    height: 29px;
+    border: 1px solid #ee5554;
+    border-radius: 2px;
+}
+
+.search-block .search-button{
+    display: block; 
+    float: right; 
+    width: 30px; height: 29px;cursor: pointer;
+    text-indent: -999999px;
+    border: 0 none; background-color: #5a435a; 
+    background-position: -193px -43px;
+}
+
+.search-block #s {
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;
+	float: left; 
+	width: 180px; 
+	height: 35px; 
+    padding: 0 10px 0 10px; 
+    -webkit-transition: width .7s , color .4s;
+    -moz-transition: width .7s , color .4s; 
+     -o-transition: width .7s , color .4s;
+    transition: width .7s , color .4s;
+    color: #444; 
+    border: none; 
+    border-radius: 2px;
+    background-color: #f2f2f2;
+}
+
+.search-block #s:focus {
+	color: #222;
+    border: none !important;
+    background-color: #ee5554;
+}
+
+/*= WORDPRESS BODY CLASSES */
+
+label{
+	font-weight: bold;
+    display: block; 
+    margin-bottom: 10px;
+}
+.widget_nav_menu #menu-top-menu li,
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_meta ul li,
+.widget_pages ul li,
+.widget_nav_menu ul li,
+.widget_recent_comments ul li,
+.widget_rss ul li,
+.widget_recent_entries li {
+	display: block; 
+    margin: 0 3px;  
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.widget_nav_menu #menu-top-menu li a,
+.widget_archive ul li a,
+.widget_categories ul li a,
+.widget_meta ul li a,
+.widget_pages ul li a,
+.widget_nav_menu ul li a,
+.widget_recent_comments ul li a,
+.widget_rss ul li a {
+	font-size: 14px; 
+	font-weight: 400; 
+	display: inline-block; 
+	line-height: 20px;
+    color: #111;
+}
+
+.widget_nav_menu ul li ul {
+    display: none;
+}
+
+.widget_nav_menu ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_nav_menu ul li a:hover,
+.widget_recent_entries ul li a:hover,
+.candour-category-posts ul li a:hover {
+	text-decoration: underline;
+    color: #555;
+}
+
+.widget_nav_menu ul li ul li a {
+	width: 80%;
+    padding: 8px 10%;
+}
+.widget_categories ul li ul {
+    display: none;
+}
+.widget_archive select,
+.widget_categories select {
+	min-width: 160px;
+	margin-left: 20px; 
+    padding: 5.5px; 
+    border: 2px solid #111;
+}
+
+.widget_recent_comments li,
+.widget_rss li {
+    margin: 2px; 
+    padding: 10px;
+}
+
+.widget_rss li span {
+	font-style: italic; 
+    float: right; 
+    clear: both;
+    width: 100%; 
+    margin: 5px 0;
+    text-align: right;
+}
+
+.widget_recent_comments li .url {
+    text-transform: uppercase;
+}
+
+#wp-calendar{
+    width: 100%;
+}
+#wp-calendar caption{
+    font-size: 16px;	
+    font-weight: 400; 
+    padding-bottom: 4px;
+    text-align: center;
+    color: #222;
+}
+#wp-calendar tbody{
+    color: #777;
+}
+
+#wp-calendar tbody td {
+	padding: 6px 0 6px;	
+	text-align: center;
+	color: #fff; 
+    background: #111;
+}
+
+#wp-calendar tbody .pad,
+footer #wp-calendar tbody .pad {
+	border: 0 none;
+    background: none;
+}
+
+#wp-calendar tfoot #next {
+    text-align: right;
+}
+
+/* Widget search --------------------------------------- */
+
+.widget_search #searchform{border:0px; height:35px;}
+.widget_search form { position: relative; }
+.widget_search input { height: 35px;width: 270px; }
+.widget_search input#s {
+	-webkit-appearance: none;
+	width: 99%;
+	padding: 0px;
+	background: #FFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	border-radius: 3px;
+}
+
+.widget_search #s:focus { 
+	outline: none; 
+	background: #EEE;
+	color: #444;
+}
+.widget_search #searchsubmit { display:none !important;}
+.widget_search #searchsubmit {
+	-webkit-appearance: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 85px;
+	line-height: 1;
+	border: none;
+	background: #1abc9c;
+	border: 1px solid #1abc9c;
+	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.8rem;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 0 3px 3px 0;
+}
+
+.widget_search #searchsubmit:hover {
+	cursor: pointer;
+	background-color: #089D80;
+	border-color: #089D80;
+}
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important; 
+    display:none;
+}
+/*=COMMENT CSS*/
+
+h2.comments-title {
+	font-family: 'Open Sans',sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: center;
+}
+.comment-content {
+	margin: 0;
+	padding: 0;
+}
+.comment-content p {
+	font-family: 'Open Sans',sans-serif;
+	font-size: 14px;
+}
+a.url{
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Open Sans',sans-serif;
+}
+.nocomments {
+    margin: 0 20px 1.1em;
+}
+p.logged-in-as a{
+	font-size: 14px;
+}
+
+input#submit.submit {
+    border: 1px solid;
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: rgba(0, 0, 0, .8);
+    font-size: 14px;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: .8em 1em .8em;
+}
+
+/*=FOOTER CSS*/
+
+.site-footer {
+	overflow: hidden;
+	clear: both;
+	border-top:1px solid #aaa; 
+	width: 100%;
+	background: #f1f1f1;
+	padding: 0;
+}
+
+
+
+
+
+.site-info {
+	overflow: hidden;
+	clear: both;
+	width: 100%;
+	padding: 20px; 
+	background: #ddd;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*=Back to top*/
+
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    border: 1px solid #ccc!important;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+#back-to-top:hover {
+    background: #e9ebec;
+    box-shadow: 0 0 10px 0 #aaa;
+}
+
+#back-to-top.show {
+    opacity: 1;
+}
