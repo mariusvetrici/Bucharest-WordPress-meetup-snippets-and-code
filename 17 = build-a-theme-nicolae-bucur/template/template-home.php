@@ -11,7 +11,7 @@
 get_header(); ?>
 
 
-<?php echo do_shortcode('[slider]'); ?>
+<?php // echo do_shortcode('[slider]'); ?>
 
 <div class="home">
 
